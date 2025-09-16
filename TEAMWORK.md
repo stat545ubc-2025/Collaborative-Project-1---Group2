@@ -10,10 +10,13 @@ Be sure to include at least the following two aspects of working together:
 
 
 ## Roles <!--Header-->
-- **Project Manager**: keeps track of deadlines
-- *Coder*: writes and reviews code
-- **writer**: @Vahid documents progress in Markdown
-- **Presenter**: prepares slides
+
+Team member | Role
+-------- |-------
+@Melinda_Ren| documents progress in Markdown
+@Wangchen| documents progress in Markdown
+@Vahid_Yekehfallah|documents progress in Markdown, review other team member's pull/push request 
+@TENG-WEI_WANG|documents progress in Markdown, review other team member's pull/push request 
 
 ## Communication <!--Header-->
 We will meet weekly on Slack. Please responsd withing 10 hours.
