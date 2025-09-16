@@ -1,5 +1,5 @@
-#TEAMWORK
-## Group 2 Teamwork Contract 
+## TEAMWORK
+### Group 2 Teamwork Contract 
 
 ## Division of Labour :rocket:
 
@@ -15,7 +15,7 @@ We will meet weekly on Slack. Please responsd withing 10 hours.
 [Join our Slack Channel](https://salck.com)
 [Join our GitHub Channe](https://github.com/stat545ubc-2025/Collaborative-Project-1---Group2.git)
 
-##Timing
+## Timing
 We aim to have all pull requests submitted at least 24 hours before the final review deadline to facilitate thorough review and testing. 
 Other team members review the request 10 hours before the final review deadline. 
 > *Reminder* Respect each other's time and ideas. <!--Blockquote-->
