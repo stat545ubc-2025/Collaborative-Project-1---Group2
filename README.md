@@ -1,8 +1,6 @@
 ## README.md
 
-This project is our 1st collaborative project at Stat545. 
-We are going to learn little about how to use R studio and Github 
-And, troubleshooting in collaborative manner.
+This is our first collaborative project in Stat545, where we will learn a bit about using RStudio and GitHub, as well as practice troubleshooting in a collaborative way.
 
 *Our group members involve:*
 
