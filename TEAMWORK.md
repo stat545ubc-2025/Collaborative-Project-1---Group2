@@ -1,5 +1,5 @@
-## TEAMWORK
-### Group 2 Teamwork Contract 
+# TEAMWORK
+## Group 2 Teamwork Contract 
 
 ## Division of Labour :rocket:
 
