@@ -6,7 +6,7 @@
 Team member | Role
 -------- |-------
 @Melinda_Ren| documents progress in Markdown, manage deadline 
-@Wangchen| documents progress in Markdown, creating files 
+@Wangchen_Xu| documents progress in Markdown, creating files 
 @Vahid_Yekehfallah|documents progress in Markdown, review other team member's pull/push request 
 @TENG-WEI_WANG|documents progress in Markdown, review other team member's pull/push request 
 
