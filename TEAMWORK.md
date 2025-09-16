@@ -7,4 +7,4 @@ Be sure to include at least the following two aspects of working together:
 
 **Timing**: We aim to have all pull requests submitted at least 24 hours before the final review deadline to facilitate thorough review and testing. 
 
-**Communication**: We will meet weekly on Slack. Please respond within 10 hours. 
+**Communication**: We will meet weekly on Slack. Please respond within 20 hours. 
