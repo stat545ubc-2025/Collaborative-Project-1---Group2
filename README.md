@@ -1,12 +1,11 @@
 ## README.md
 
-<<<<<<< HEAD
+
 This is our first project in Stat545. 
 We are going to learn a bit about using Rstudio and Github 
 And, as well as practice troubleshooting in a collaborative way.
-=======
+
 This is our first collaborative project in Stat545, where we will learn a bit about using RStudio and GitHub, as well as practice troubleshooting in a collaborative way.
->>>>>>> 368e8e6297da64d248e28f90ceab1de7f5277dd1
 
 *Our group members involve:*
 
@@ -17,7 +16,7 @@ Name | Email
 *Teng Wei Wang* | _david23022008@gmail.com_
 *Melinda Ren* | _melindaren2001@gmail.com_
 
-We have following files in this repository:
+We have the following files in this repository:
 
 - README.md
 
