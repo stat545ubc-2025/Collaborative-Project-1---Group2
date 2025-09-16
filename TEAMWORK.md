@@ -36,3 +36,4 @@ content column 1| content column 2
 GitHub supports emoji!
 
 :smile:
+:rocket:
