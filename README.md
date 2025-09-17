@@ -1,5 +1,6 @@
 ## README.md
 
+Stat545 Group2:
 This is our first collaborative project in Stat545, where we will learn a bit about using RStudio and GitHub, as well as practice troubleshooting in a collaborative way.
 
 *Our group members involve:*

@@ -1,10 +1,22 @@
-##TEAMWORK
-###Teamwork Contract 
+# TEAMWORK
+## Group 2 Teamwork Contract 
 
-Be sure to include at least the following two aspects of working together:
+## Division of Labour :rocket:
 
-**Division of Labour**: How will you divide the work required for this milestone? Be sure to include what work will be done individually, so that the work in each teammate’s pull request has been identified.
+Team member | Role
+-------- |-------
+@Melinda_Ren| documents progress in Markdown, manage deadline 
+@Wangchen_Xu| documents progress in Markdown, creating files 
+@Vahid_Yekehfallah|documents progress in Markdown, review other team member's pull/push request 
+@TENG-WEI_WANG|documents progress in Markdown, review other team member's pull/push request 
 
-**Timing**: When will you each aim to submit your pull requests, keeping in mind that another teammate will need to review your work? Warning: Do not submit your part of the project last-minute. Your teammate’s review of your work may not be trivial: if there are errors, your team will need time to debug them.
+## Communication :smile:
+We will meet weekly on Slack. Please responsd withing 10 hours.
+[Join our Slack Channel](https://salck.com)
+[Join our GitHub Channe](https://github.com/stat545ubc-2025/Collaborative-Project-1---Group2.git)
 
-**Communication**: How will you communicate with each other? For example, will you be using both Slack and GitHub Issues? For what, exactly? How long will it realistically take you to respond to a message? Will you hold a regular meeting, or rely exclusively on asynchronous communication?
+## Timing
+We aim to have all pull requests submitted at least 24 hours before the final review deadline to facilitate thorough review and testing. 
+Other team members review the request 10 hours before the final review deadline. 
+> *Reminder* Respect each other's time and ideas. <!--Blockquote-->
+
