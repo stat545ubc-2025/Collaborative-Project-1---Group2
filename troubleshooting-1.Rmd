@@ -25,14 +25,16 @@ Now, let's load the `tidyverse` (meta-) package:
 
 ```{r, error = TRUE}
 ## ERROR 2 ##
-libraries(tidyverse)
+library(tidyverse)
+ \# changed "libraries" to "library" to solve the problem
 ```
 
 By loading the tidyverse, a function called `glimpse` has been made available. This function is useful for viewing a data set. Let's take a look at the `mtcars` dataset by applying the `glimpse` function to `mtcars`!
 
 ```{r, error = TRUE}
 ## ERROR 3 ##
-glimpse mtcars
+glimpse(mtcars) 
+ \# added () to mtcars, to make glimpse function work on the mtcars
 ```
 
 ## Attribution
