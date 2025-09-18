@@ -13,10 +13,13 @@ This document is written in **R Markdown**. We'll use this document to explore t
 
 First, let's store the current date as a variable. We can use the function `Sys.Date` with no arguments to get the current date:
 
+<!-- I delete underscore pre and after "today" in the following chunck-->
 ```{r, error = TRUE}
 ## ERROR 1 ##
-_today_ <- Sys.Date()
+
+today <- Sys.Date()
 ```
+
 
 You may notice that, although an error might appear in these cells, this Rmd file knits just fine. That's because the `error = TRUE` *chunk option* is included in each chunk, allowing the Rmd file to knit, even when an error is encountered.
 
