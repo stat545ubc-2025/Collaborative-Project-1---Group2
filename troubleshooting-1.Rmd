@@ -22,11 +22,12 @@ today <- Sys.Date()
 You may notice that, although an error might appear in these cells, this Rmd file knits just fine. That's because the `error = TRUE` *chunk option* is included in each chunk, allowing the Rmd file to knit, even when an error is encountered.
 
 Now, let's load the `tidyverse` (meta-) package:
-
+<!-- Correct the spelling of library -->
 ```{r, error = TRUE}
-## ERROR 2 ##
-libraries(tidyverse)
+## ERROR2 ##
+library(tidyverse)
 ```
+
 
 By loading the tidyverse, a function called `glimpse` has been made available. This function is useful for viewing a data set. Let's take a look at the `mtcars` dataset by applying the `glimpse` function to `mtcars`!
 
