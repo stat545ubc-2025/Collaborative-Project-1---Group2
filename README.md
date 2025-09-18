@@ -15,9 +15,7 @@ Name | Email
 We have the following files in this repository:
 
 - README.md
-
 - TEAMWORK.md
-
 - Troubleshooting-1.md
 
 You can either view these files on Github or pull the files to your Rstudio and run the code so you can view the page we drew.
