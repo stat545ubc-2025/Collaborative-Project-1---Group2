@@ -25,9 +25,10 @@ You may notice that, although an error might appear in these cells, this Rmd fil
 Now, let's load the `tidyverse` (meta-) package:
 <!-- Correct the spelling of library -->
 ```{r, error = TRUE}
-## ERROR2 ##
+## ERROR 2 ##
 library(tidyverse)
-#correct spelling of library
+# changed "libraries" to "library" to solve the problem
+
 ```
 
 
@@ -35,7 +36,8 @@ By loading the tidyverse, a function called `glimpse` has been made available. T
 
 ```{r, error = TRUE}
 ## ERROR 3 ##
-glimpse mtcars
+glimpse(mtcars) 
+# added () to mtcars, to make glimpse function work on the mtcars
 ```
 
 ## Attribution
