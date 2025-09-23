@@ -135,8 +135,12 @@ Using `summarize()`, we can find the minimum and the maximum rating by title, st
 ```{r}
 ### ERROR HERE ### 
 movieLens %>%
-  mutate(min_rating = min(rating), 
-         max_rating = max(rating))
+  group_by(title) %>%
+  summarize(
+    min_rating = min(rating),
+    max_rating = max(rating)
+  )
+#mutate() works row-by-row, not across groups. To calculate summary min/max per group, we should use summarise() after grouping
 ```
 
 ## Exercise 5: Scoped variants with `across()` Wangchen
@@ -160,7 +164,8 @@ We can find the minimum height and mass within each species, ignoring the missin
 ### ERROR HERE ### 
 starWars %>%
   group_by(species) %>%
-  summarise(across("height", "mass", function(x) min(x, na.rm=TRUE)))
+  summarise(across(c(height, mass), ~min(.x, na.rm = TRUE)))
+#across() takes the first argument as column(s), change to c(height, mass)
 ```
 
 Note that here R has taken the convention that the minimum value of a set of `NA`s is `Inf`.
@@ -176,16 +181,19 @@ Manually create a tibble with 4 columns:
 ```{r}
 ### ERROR HERE ### 
 fakeStarWars <- tribble(
-  ~name,            ~birth_weight,  ~birth_year, ~birth_location
-  "Luke Skywalker",  1.35      ,   1998        ,  Liverpool, England,
-  "C-3PO"         ,  1.80      ,   1999        ,  Liverpool, England,
-  "R2-D2"         ,  2.25      ,   2000        ,  Seattle, WA,
-  "Darth Vader"   ,  2.70      ,   2001        ,  Liverpool, England,
-  "Leia Organa"   ,  3.15      ,   2002        ,  New York, NY,
-  "Owen Lars"     ,  3.60      ,   2003        ,  Seattle, WA,
-  "Beru Whitesun Iars", 4.05   ,   2004        ,  Liverpool, England,
-  "R5-D4"         ,  4.50      ,   2005        ,  New York, NY,
+  ~name,            ~birth_weight,  ~birth_year, ~birth_location      ,
+  "Luke Skywalker",  1.35      ,   1998        ,  "Liverpool, England", 
+  "C-3PO"         ,  1.80      ,   1999        ,  "Liverpool, England",
+  "R2-D2"         ,  2.25      ,   2000        ,  "Seattle, WA",
+  "Darth Vader"   ,  2.70      ,   2001        ,  "Liverpool, England",
+  "Leia Organa"   ,  3.15      ,   2002        ,  "New York, NY",
+  "Owen Lars"     ,  3.60      ,   2003        ,  "Seattle, WA",
+  "Beru Whitesun Iars", 4.05   ,   2004        ,  "Liverpool, England",
+  "R5-D4"         ,  4.50      ,   2005        ,  "New York, NY",
 )
+
+# add a comma after the last column name ~birth_location
+# Put strings in quotes "Liverpool, England" instead of Liverpool, England
 ```
 
 ## Attributions
