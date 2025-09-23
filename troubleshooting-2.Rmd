@@ -17,7 +17,7 @@ Note that errors are not all syntactic (i.e., broken code)! Some are logical err
 [MovieLens](https://dl.acm.org/doi/10.1145/2827872) are a series of datasets widely used in education, that describe movie ratings from the MovieLens [website](https://movielens.org/). There are several MovieLens datasets, collected by the [GroupLens Research Project](https://grouplens.org/datasets/movielens/) at the University of Minnesota. Here, we load the MovieLens 100K dataset from Rafael Irizarry and Amy Gill's R package, [dslabs](https://cran.r-project.org/web/packages/dslabs/dslabs.pdf), which contains datasets useful for data analysis practice, homework, and projects in data science courses and workshops. We'll also load other required packages.
 
 ```{r}
-### ERROR HERE ###
+### ERROR HERE ### Vahid
 load.packages(dslabs)
 load.packages(tidyverse)
 load.packages(stringr)
@@ -33,7 +33,7 @@ Let's have a look at the dataset! My goal is to:
 -   Have a quick look at the tibble, using a *dplyr function*.
 
 ```{r}
-### ERROR HERE ###
+### ERROR HERE ### vahid
 class(dslabs::movielens)
 movieLens <- as_tibble(dslabs::movielens)
 dim(movieLens)
@@ -48,7 +48,7 @@ Now that we've had a quick look at the dataset, it would be interesting to explo
 -   have *more than* 4.5 stars, and were filmed *before* 1995.
 
 ```{r}
-### ERROR HERE ###
+### ERROR HERE ### vahid
 filter(movieLens, genres == "Drama")
 filter(movieLens, !genres == "Drama")
 filter(movieLens, year >= 2000)
@@ -59,7 +59,7 @@ filter(movieLens, rating > 4.5, year < 1995)
 While filtering for *all movies that do not belong to the genre drama* above, I noticed something interesting. I want to filter for the same thing again, this time selecting variables **title and genres first,** and then *everything else*. But I want to do this in a robust way, so that (for example) if I end up changing `movieLens` to contain more or less columns some time in the future, the code will still work. Hint: there is a function to select "everything else"...
 
 ```{r}
-### ERROR HERE ###
+### ERROR HERE ### melinda
 movieLens %>%
   filter(!genres == "Drama") %>%
   select(title, genres, year, rating, timestamp)
@@ -70,7 +70,7 @@ movieLens %>%
 Some of the variables in the `movieLens` dataset are in *camelCase* (in fact, *movieLens* is in camelCase). Let's clean these two variables to use *snake_case* instead, and assign our post-rename object back to "movieLens".
 
 ```{r}
-### ERROR HERE ###
+### ERROR HERE ### melinda
 movieLens <- movieLens %>%
   rename(user_id == userId,
          movie_id == movieId)
@@ -79,7 +79,7 @@ movieLens <- movieLens %>%
 As you already know, `mutate()` defines and inserts new variables into a tibble. There is *another mystery function similar to `mutate()`* that adds the new variable, but also drops existing ones. I wanted to create an `average_rating` column that takes the `mean(rating)` across all entries, and I only want to see that variable (i.e drop all others!) but I forgot what that mystery function is. Can you remember?
 
 ```{r}
-### ERROR HERE ### 
+### ERROR HERE ### melinda
 mutate(movieLens,
        average_rating = mean(rating))
 ```
@@ -99,7 +99,7 @@ movieLens %>%
 Without using `group_by()`, I want to find out how many movie reviews there have been for each year.
 
 ```{r}
-### ERROR HERE ###
+### ERROR HERE ### teng
 movieLens %>%
   tally(year)
 ```
@@ -107,7 +107,7 @@ movieLens %>%
 Both `count()` and `tally()` can be grouped by multiple columns. Below, I want to count the number of movie reviews by title and rating, and sort the results.
 
 ```{r}
-### ERROR HERE ###
+### ERROR HERE ### teng
 movieLens %>%
   count(c(title, rating), sort = TRUE)
 ```
@@ -127,7 +127,7 @@ movieLens %>%
 Using `summarize()`, we can find the minimum and the maximum rating by title, stored under columns named `min_rating`, and `max_rating`, respectively.
 
 ```{r}
-### ERROR HERE ###
+### ERROR HERE ### teng
 movieLens %>%
   mutate(min_rating = min(rating), 
          max_rating = max(rating))
@@ -151,7 +151,7 @@ starWars %>%
 We can find the minimum height and mass within each species, ignoring the missing values: 
 
 ```{r}
-### ERROR HERE ###
+### ERROR HERE ### xu
 starWars %>%
   group_by(species) %>%
   summarise(across("height", "mass", function(x) min(x, na.rm=TRUE)))
@@ -168,7 +168,7 @@ Manually create a tibble with 4 columns:
 -   `birth_location` should contain three locations (Liverpool, Seattle, and New York).
 
 ```{r}
-### ERROR HERE ###
+### ERROR HERE ### xu
 fakeStarWars <- tribble(
   ~name,            ~birth_weight,  ~birth_year, ~birth_location
   "Luke Skywalker",  1.35      ,   1998        ,  Liverpool, England,
