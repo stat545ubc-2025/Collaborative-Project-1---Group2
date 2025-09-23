@@ -2,7 +2,11 @@
 title: "Team Troubleshooting Deliverable 2"
 output: github_document
 ---
+<<<<<<< HEAD
 #hey Teng-Wei Create this line please delete for me
+=======
+#hey Teng-Wei Create this line please delete for me1
+>>>>>>> 86450465753fb8614ac54a8cf802d27b14f7645f
 ```{r include = FALSE}
 knitr::opts_chunk$set(error = TRUE)
 ```
