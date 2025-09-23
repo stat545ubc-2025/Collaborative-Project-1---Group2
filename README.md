@@ -15,8 +15,14 @@ Name | Email
 We have the following new files in this repository:
 
 
+- README.md
+- TEAMWORK.md
+- Troubleshooting-1.Rmd
+- Troubleshooting-1.md
+- Troubleshooting-2.Rmd
 - Troubleshooting-2.md
 
-We have updated the README file as well.
+
+
 
 You can either view these files on Github or pull the files to your Rstudio and run the code so you can view the page we drew.Thank you for reading!
