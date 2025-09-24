@@ -27,43 +27,17 @@ projects in data science courses and workshops. We’ll also load other
 required packages.
 
 ``` r
-### ERROR HERE ### 
-# Install packages 
-install.packages("dslabs")
-```
-
-    ## Error in contrib.url(repos, "source"): trying to use CRAN without setting a mirror
-
-``` r
-install.packages("tidyverse")
-```
-
-    ## Error in contrib.url(repos, "source"): trying to use CRAN without setting a mirror
-
-``` r
-install.packages("stringr")
-```
-
-    ## Error in contrib.url(repos, "source"): trying to use CRAN without setting a mirror
-
-``` r
-install.packages("gapminder")
-```
-
-    ## Error in contrib.url(repos, "source"): trying to use CRAN without setting a mirror
-
-``` r
-# Load packages 
+### ERROR HERE ### (Change load.package() to library() by Teng-Wei)
 library(dslabs)
 library(tidyverse)
 ```
 
     ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
     ## ✔ dplyr     1.1.4     ✔ readr     2.1.5
-    ## ✔ forcats   1.0.0     ✔ stringr   1.5.2
-    ## ✔ ggplot2   4.0.0     ✔ tibble    3.3.0
+    ## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+    ## ✔ ggplot2   3.5.2     ✔ tibble    3.3.0
     ## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-    ## ✔ purrr     1.1.0     
+    ## ✔ purrr     1.0.4     
     ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
     ## ✖ dplyr::filter() masks stats::filter()
     ## ✖ dplyr::lag()    masks stats::lag()
@@ -71,6 +45,9 @@ library(tidyverse)
 
 ``` r
 library(stringr)
+#install the following tools by deleteing #sign in the following lines
+#install.packages("devtools") # Do not run this if you already have this package installed! 
+#devtools::install_github("JoeyBernhardt/singer")
 library(gapminder)
 ```
 
@@ -81,32 +58,6 @@ library(gapminder)
     ## 
     ##     gapminder
 
-``` r
-# Install from GitHub if needed
-install.packages("devtools")   # only if you don’t have it yet
-```
-
-    ## Error in contrib.url(repos, "source"): trying to use CRAN without setting a mirror
-
-``` r
-devtools::install_github("JoeyBernhardt/singer")
-```
-
-    ## Using GitHub PAT from the git credential store.
-    ## Skipping install of 'singer' from a github remote, the SHA1 (2b4fe9cb) has not changed since last install.
-    ##   Use `force = TRUE` to force installation
-
-``` r
-### ERROR HERE ### 
-#I put the original version here in case you guys want to edit based on this version
-#load.packages(dslabs)
-#load.packages(tidyverse)
-#load.packages(stringr)
-#install.packages("devtools") # Do not run this if you already have this package installed! 
-#devtools::install_github("JoeyBernhardt/singer")
-#load.packages(gapminder)
-```
-
 Let’s have a look at the dataset! My goal is to:
 
 - Find out the “class” of the dataset.
@@ -115,7 +66,7 @@ Let’s have a look at the dataset! My goal is to:
 - Have a quick look at the tibble, using a *dplyr function*.
 
 ``` r
-### ERROR HERE ### 
+### ERROR HERE ### (Add Head() function by Teng-Wei)
 class(dslabs::movielens)
 ```
 
@@ -128,6 +79,20 @@ dim(movieLens)
 
     ## [1] 100004      7
 
+``` r
+head(movieLens)
+```
+
+    ## # A tibble: 6 × 7
+    ##   movieId title                              year genres userId rating timestamp
+    ##     <int> <chr>                             <int> <fct>   <int>  <dbl>     <int>
+    ## 1      31 Dangerous Minds                    1995 Drama       1    2.5    1.26e9
+    ## 2    1029 Dumbo                              1941 Anima…      1    3      1.26e9
+    ## 3    1061 Sleepers                           1996 Thril…      1    3      1.26e9
+    ## 4    1129 Escape from New York               1981 Actio…      1    2      1.26e9
+    ## 5    1172 Cinema Paradiso (Nuovo cinema Pa…  1989 Drama       1    4      1.26e9
+    ## 6    1263 Deer Hunter, The                   1978 Drama…      1    2      1.26e9
+
 Now that we’ve had a quick look at the dataset, it would be interesting
 to explore the rows (observations) in some more detail. I’d like to
 consider the movie entries that…
@@ -139,7 +104,7 @@ consider the movie entries that…
 - have *more than* 4.5 stars, and were filmed *before* 1995.
 
 ``` r
-### ERROR HERE ### 
+### ERROR HERE ### (Change month to year by Teng-Wei)
 filter(movieLens, genres == "Drama")
 ```
 
@@ -197,13 +162,23 @@ filter(movieLens, year >= 2000)
     ## # ℹ 29,525 more rows
 
 ``` r
-filter(movieLens, year == 1999 | month == 2000)
+filter(movieLens, year == 1999 | year == 2000)
 ```
 
-    ## Error in `filter()`:
-    ## ℹ In argument: `year == 1999 | month == 2000`.
-    ## Caused by error in `month == 2000`:
-    ## ! comparison (==) is possible only for atomic and list types
+    ## # A tibble: 9,088 × 7
+    ##    movieId title                             year genres userId rating timestamp
+    ##      <int> <chr>                            <int> <fct>   <int>  <dbl>     <int>
+    ##  1    2694 Big Daddy                         1999 Comedy      3    3      1.30e9
+    ##  2    2702 Summer of Sam                     1999 Drama       3    3.5    1.30e9
+    ##  3    2762 Sixth Sense, The                  1999 Drama…      3    3.5    1.30e9
+    ##  4    2841 Stir of Echoes                    1999 Horro…      3    4      1.30e9
+    ##  5    2858 American Beauty                   1999 Drama…      3    4      1.30e9
+    ##  6    2959 Fight Club                        1999 Actio…      3    5      1.30e9
+    ##  7    3510 Frequency                         2000 Drama…      3    4      1.30e9
+    ##  8    3949 Requiem for a Dream               2000 Drama       3    5      1.30e9
+    ##  9   27369 Daria: Is It Fall Yet?            2000 Anima…      3    3.5    1.30e9
+    ## 10    2628 Star Wars: Episode I - The Phan…  1999 Actio…      4    5      9.50e8
+    ## # ℹ 9,078 more rows
 
 ``` r
 filter(movieLens, rating > 4.5, year < 1995)
@@ -233,25 +208,25 @@ less columns some time in the future, the code will still work. Hint:
 there is a function to select “everything else”…
 
 ``` r
-### ERROR HERE ### 
+### ERROR HERE ### (Substitute year,rating, timestamp by everything() by Teng-Wei)
 movieLens %>%
   filter(!genres == "Drama") %>%
-  select(title, genres, year, rating, timestamp)
+  select(title, genres, everything())
 ```
 
-    ## # A tibble: 92,247 × 5
-    ##    title                           genres                  year rating timestamp
-    ##    <chr>                           <fct>                  <int>  <dbl>     <int>
-    ##  1 Dumbo                           Animation|Children|Dr…  1941    3      1.26e9
-    ##  2 Sleepers                        Thriller                1996    3      1.26e9
-    ##  3 Escape from New York            Action|Adventure|Sci-…  1981    2      1.26e9
-    ##  4 Deer Hunter, The                Drama|War               1978    2      1.26e9
-    ##  5 Ben-Hur                         Action|Adventure|Drama  1959    2      1.26e9
-    ##  6 Dracula (Bram Stoker's Dracula) Fantasy|Horror|Romanc…  1992    3.5    1.26e9
-    ##  7 Cape Fear                       Thriller                1991    2      1.26e9
-    ##  8 Star Trek: The Motion Picture   Adventure|Sci-Fi        1979    2.5    1.26e9
-    ##  9 Beavis and Butt-Head Do America Adventure|Animation|C…  1996    1      1.26e9
-    ## 10 French Connection, The          Action|Crime|Thriller   1971    4      1.26e9
+    ## # A tibble: 92,247 × 7
+    ##    title                           genres  movieId  year userId rating timestamp
+    ##    <chr>                           <fct>     <int> <int>  <int>  <dbl>     <int>
+    ##  1 Dumbo                           Animat…    1029  1941      1    3      1.26e9
+    ##  2 Sleepers                        Thrill…    1061  1996      1    3      1.26e9
+    ##  3 Escape from New York            Action…    1129  1981      1    2      1.26e9
+    ##  4 Deer Hunter, The                Drama|…    1263  1978      1    2      1.26e9
+    ##  5 Ben-Hur                         Action…    1287  1959      1    2      1.26e9
+    ##  6 Dracula (Bram Stoker's Dracula) Fantas…    1339  1992      1    3.5    1.26e9
+    ##  7 Cape Fear                       Thrill…    1343  1991      1    2      1.26e9
+    ##  8 Star Trek: The Motion Picture   Advent…    1371  1979      1    2.5    1.26e9
+    ##  9 Beavis and Butt-Head Do America Advent…    1405  1996      1    1      1.26e9
+    ## 10 French Connection, The          Action…    1953  1971      1    4      1.26e9
     ## # ℹ 92,237 more rows
 
 ## Exercise 2: Calculating with `mutate()`-like functions Melinda
