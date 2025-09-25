@@ -12,7 +12,7 @@ Note that errors are not all syntactic (i.e., broken code)! Some are
 logical errors as well (i.e. code that does not do what it was intended
 to do).
 
-## Exercise 1: Exploring with `select()` and `filter()` Tengwei and Vahid
+## Exercise 1: Exploring with `select()` and `filter()`
 
 [MovieLens](https://dl.acm.org/doi/10.1145/2827872) are a series of
 datasets widely used in education, that describe movie ratings from the
@@ -27,7 +27,7 @@ projects in data science courses and workshops. We’ll also load other
 required packages.
 
 ``` r
-### ERROR HERE ### (Change load.package() to library() by Teng-Wei)
+### ERROR HERE ### (Change load.package() to library() by Teng-Wei) and reviewed by Vahid
 library(dslabs)
 library(tidyverse)
 ```
@@ -35,9 +35,9 @@ library(tidyverse)
     ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
     ## ✔ dplyr     1.1.4     ✔ readr     2.1.5
     ## ✔ forcats   1.0.0     ✔ stringr   1.5.1
-    ## ✔ ggplot2   3.5.2     ✔ tibble    3.3.0
+    ## ✔ ggplot2   4.0.0     ✔ tibble    3.3.0
     ## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-    ## ✔ purrr     1.0.4     
+    ## ✔ purrr     1.1.0     
     ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
     ## ✖ dplyr::filter() masks stats::filter()
     ## ✖ dplyr::lag()    masks stats::lag()
@@ -66,7 +66,7 @@ Let’s have a look at the dataset! My goal is to:
 - Have a quick look at the tibble, using a *dplyr function*.
 
 ``` r
-### ERROR HERE ### (Add Head() function by Teng-Wei)
+### ERROR HERE ### (Add Head() function by Teng-Wei) and reviewed by Vahid
 class(dslabs::movielens)
 ```
 
@@ -104,7 +104,7 @@ consider the movie entries that…
 - have *more than* 4.5 stars, and were filmed *before* 1995.
 
 ``` r
-### ERROR HERE ### (Change month to year by Teng-Wei)
+### ERROR HERE ### (Change month to year by Teng-Wei) and reviewed by Vahid
 filter(movieLens, genres == "Drama")
 ```
 
@@ -209,6 +209,7 @@ there is a function to select “everything else”…
 
 ``` r
 ### ERROR HERE ### (Substitute year,rating, timestamp by everything() by Teng-Wei)
+#and reviewed by Vahid
 movieLens %>%
   filter(!genres == "Drama") %>%
   select(title, genres, everything())
@@ -229,7 +230,7 @@ movieLens %>%
     ## 10 French Connection, The          Action…    1953  1971      1    4      1.26e9
     ## # ℹ 92,237 more rows
 
-## Exercise 2: Calculating with `mutate()`-like functions Melinda
+## Exercise 2: Calculating with `mutate()`-like functions
 
 Some of the variables in the `movieLens` dataset are in *camelCase* (in
 fact, *movieLens* is in camelCase). Let’s clean these two variables to
@@ -237,7 +238,7 @@ use *snake_case* instead, and assign our post-rename object back to
 “movieLens”.
 
 ``` r
-### ERROR HERE ### 
+### ERROR HERE ### changed by Melinda and reviewed by Xu
 library(tidyverse)
 movieLens <- movieLens %>%
   rename(user_id = userId,
@@ -253,7 +254,7 @@ entries, and I only want to see that variable (i.e drop all others!) but
 I forgot what that mystery function is. Can you remember?
 
 ``` r
-### ERROR HERE ### 
+### ERROR HERE ### changed by Melinda and reviewed by Xu
 transmute(movieLens,
        average_rating = mean(rating,na.rm = TRUE))
 ```
@@ -277,7 +278,7 @@ transmute(movieLens,
 #changed mutate to transmute to add new variable and drops all the others.
 ```
 
-## Exercise 3: Calculating with `summarise()`-like functions Melinda
+## Exercise 3: Calculating with `summarise()`-like functions
 
 Alone, `tally()` is a short form of `summarise()`. `count()` is
 short-hand for `group_by()` and `tally()`.
@@ -313,7 +314,7 @@ Without using `group_by()`, I want to find out how many movie reviews
 there have been for each year.
 
 ``` r
-### ERROR HERE ### 
+### ERROR HERE ### changed by Melinda and reviewed by Xu
 movieLens %>%
   count(year)
 ```
@@ -342,7 +343,7 @@ I want to count the number of movie reviews by title and rating, and
 sort the results.
 
 ``` r
-### ERROR HERE ### 
+### ERROR HERE ### changed by Melinda and reviewed by Xu
 movieLens %>%
   count(title, rating, sort = TRUE)
 ```
@@ -371,7 +372,7 @@ within your dataset, `add_tally()` and `add_count()` are handy shortcuts
 that add an additional columns to your tibble, rather than collapsing
 each group.
 
-## Exercise 4: Calculating with `group_by()` Wangchen
+## Exercise 4: Calculating with `group_by()`
 
 We can calculate the mean rating by year, and store it in a new column
 called `avg_rating`:
@@ -427,10 +428,12 @@ movieLens %>%
     ## # ℹ 8,822 more rows
 
 ``` r
-#mutate() works row-by-row, not across groups. To calculate summary min/max per group, we should use summarise() after grouping
+#mutate() works row-by-row, not across groups. 
+#To calculate summary min/max per group, we should use summarise() 
+#after grouping changed by Xu and reviewed by Teng
 ```
 
-## Exercise 5: Scoped variants with `across()` Wangchen
+## Exercise 5: Scoped variants with `across()`
 
 `across()` is a newer dplyr function (`dplyr` 1.0.0) that allows you to
 apply a transformation to multiple variables selected with the
@@ -489,13 +492,13 @@ starWars %>%
     ## # ℹ 28 more rows
 
 ``` r
-#across() takes the first argument as column(s), change to c(height, mass)
+#across() takes the first argument as column(s), change to c(height, mass) # changed by Xu and reviewed by Teng
 ```
 
 Note that here R has taken the convention that the minimum value of a
 set of `NA`s is `Inf`.
 
-## Exercise 6: Making tibbles Wangchen
+## Exercise 6: Making tibbles
 
 Manually create a tibble with 4 columns:
 
@@ -521,6 +524,7 @@ fakeStarWars <- tribble(
 
 # add a comma after the last column name ~birth_location
 # Put strings in quotes "Liverpool, England" instead of Liverpool, England
+#changed by Xu and reviewed by Teng
 ```
 
 ## Attributions
